@@ -55,7 +55,7 @@ def run(filename: str, p2=False):
 if __name__ == "__main__":
     day = 2
     dt = datetime(2024, 12, day)
-    exp = {"a": None, "b": None}
+    exp = {"a": 2, "b": 4}
 
     run_and_submit(f"Day{day}/sample.txt", "a", run, expected=exp["a"])
     run_and_submit(f"Day{day}/input.txt", "a", run, submit=True, dt=dt)
