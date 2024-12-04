@@ -6,7 +6,7 @@ from utils import run_and_submit
 def parse(filename: str):
     with open(filename, "r") as f:
         lines = f.read().strip().split("\n")
-        # list(map(int, re.findall("-?\d+", line)))
+        # lines = [list(map(int, re.findall("-?\d+", line))) for line in lines]
     print(lines)
     return lines
 
