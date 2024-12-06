@@ -3,7 +3,7 @@ from collections import defaultdict
 from datetime import datetime
 from functools import cmp_to_key, partial
 
-from utils import run_and_submit
+from utils import run_and_submit, timeit
 
 
 def parse(filename: str):
@@ -21,6 +21,7 @@ def parse(filename: str):
     return rules, upd
 
 
+@timeit
 def run(filename: str):
     rules, upd = parse(filename)
 
@@ -52,6 +53,7 @@ def cust_cmp(a, b, G):
         return 0
 
 
+@timeit
 def runp2(filename: str):
     rules, upd = parse(filename)
 

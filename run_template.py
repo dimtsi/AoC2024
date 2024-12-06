@@ -15,6 +15,8 @@ def run(filename: str):
     lines = parse(filename)
     return out
 
+def runp2(filename: str):
+    return run(filename)
 
 if __name__ == "__main__":
     day = 
@@ -23,5 +25,5 @@ if __name__ == "__main__":
 
     run_and_submit(f"Day{day}/sample.txt", "a", run, expected=exp["a"])
     run_and_submit(f"Day{day}/input.txt", "a", run, submit=True, dt=dt)
-    run_and_submit(f"Day{day}/sample.txt", "b", run, expected=exp["b"])
-    run_and_submit(f"Day{day}/input.txt", "b", run, submit=True, dt=dt)
+    run_and_submit(f"Day{day}/sample.txt", "b", runp2, expected=exp["b"])
+    run_and_submit(f"Day{day}/input.txt", "b", runp2, submit=True, dt=dt)
