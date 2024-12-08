@@ -81,7 +81,6 @@ def run(filename: str, p2=False):
 
 
 if __name__ == "__main__":
-    # print(get_antin_loc((3, 4), (5, 5), 10, 10))
     day = 8
     dt = datetime(2024, 12, day)
     exp = {"a": 14, "b": None}
