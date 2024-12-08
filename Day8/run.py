@@ -2,7 +2,7 @@ from datetime import datetime
 from functools import partial
 from typing import Dict
 
-from utils import run_and_submit
+from utils import run_and_submit, timeit
 
 
 def parse(filename: str):
@@ -64,6 +64,7 @@ def get_antin_loc_p2(pos1, pos2, matrix):
     return a1 + a2
 
 
+@timeit
 def run(filename: str, p2=False):
     matrix = parse(filename)
 
