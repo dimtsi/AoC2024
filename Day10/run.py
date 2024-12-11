@@ -74,9 +74,9 @@ def run(filename: str, p2=False):
 if __name__ == "__main__":
     day = 10
     dt = datetime(2024, 12, day)
-    exp = {"a1": 3, "a2": 36, "b": 81}
+    exp = {"a": 36, "b": 81}
 
-    run_and_submit(f"Day{day}/sample.txt", "a", run, expected=exp["a2"])
+    run_and_submit(f"Day{day}/sample.txt", "a", run, expected=exp["a"])
     run_and_submit(f"Day{day}/input.txt", "a", run, submit=True, dt=dt)
     run_and_submit(
         f"Day{day}/sample.txt", "b", partial(run, p2=True), expected=exp["b"]
