@@ -90,7 +90,7 @@ def runp2(filename: str):
 
     max_adj_all, min_t = 0, float("inf")
     for t in range(20000):
-        final_poss = {pos_at_t(t, *rbt, R, C) for rbt in rbts}
+        final_poss = {pos_at_t(t, *rbt, R, C) for rbt in rbts}  # type: ignore
 
         max_adj = bfs(final_poss)
         if max_adj > max_adj_all and max_adj > 50:
@@ -101,6 +101,7 @@ def runp2(filename: str):
             ppg(G)
             max_adj_all = max_adj
             min_t = min(min_t, t)
+            break
 
     return min_t
 
