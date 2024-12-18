@@ -113,7 +113,7 @@ def runp2(filename: str):
         for a_cand in candidates:
             RR = deepcopy(R)
             for offset in range(8):
-                aa = (a_cand * 8) + offset
+                aa = (a_cand << 3) + offset
                 output = run_program(aa, RR, I)
 
                 if output == I[-last_k:]:
