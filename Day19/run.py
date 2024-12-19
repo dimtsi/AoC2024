@@ -1,7 +1,7 @@
 from datetime import datetime
 from functools import cache, partial
 
-from utils import run_and_submit
+from utils import run_and_submit, timeit
 
 
 def parse(filename: str):
@@ -38,6 +38,7 @@ def matchp2(s, P):
         return combs
 
 
+@timeit
 def run(filename: str, p2=False):
     pats, ls = parse(filename)
 
@@ -56,7 +57,7 @@ if __name__ == "__main__":
     exp = {"a": 6, "b": 16}
 
     run_and_submit(f"Day{day}/sample.txt", "a", run, expected=exp["a"])
-    run_and_submit(f"Day{day}/input.txt", "a", run, submit=False, dt=dt)
+    run_and_submit(f"Day{day}/input.txt", "a", run, submit=True, dt=dt)
     run_and_submit(
         f"Day{day}/sample.txt", "b", partial(run, p2=True), expected=exp["b"]
     )
