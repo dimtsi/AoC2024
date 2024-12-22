@@ -196,7 +196,7 @@ if __name__ == "__main__":
     dt = datetime(2024, 12, day)
     exp = {"a": 126384, "b": None}
 
-    run_and_submit(f"Day{day}/sample.txt", "a", run, expected=exp["a"])
-    run_and_submit(f"Day{day}/input.txt", "a", run, submit=True, dt=dt)
+    # run_and_submit(f"Day{day}/sample.txt", "a", run, expected=exp["a"])
+    # run_and_submit(f"Day{day}/input.txt", "a", run, submit=True, dt=dt)
     run_and_submit(f"Day{day}/sample.txt", "b", runp2, expected=exp["b"])
     run_and_submit(f"Day{day}/input.txt", "b", runp2, submit=True, dt=dt)
