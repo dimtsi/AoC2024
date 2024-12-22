@@ -1,7 +1,6 @@
 import re
 from collections import deque
 from datetime import datetime
-from functools import cache
 from itertools import pairwise
 
 from utils import run_and_submit, timeit
@@ -16,7 +15,6 @@ def parse(filename: str):
     return lines
 
 
-@cache
 def next_(n):
     num = n * 64
     n ^= num

@@ -65,7 +65,7 @@ def build_paths(G):
     M = {"^": (-1, 0), "v": (1, 0), ">": (0, 1), "<": (0, -1)}
     RM = {v: k for k, v in M.items()}
 
-    dr_to_origins = defaultdict(dict)
+    all_shortest_paths = defaultdict(dict)
     for i in range(len(G)):
         for j in range(len(G[0])):
             if G[i][j] == "":
@@ -88,8 +88,8 @@ def build_paths(G):
                             dc = path[r + 1][1] - path[r][1]
                             transl += RM[(dr, dc)]
                         transl_paths.append(transl)
-                    dr_to_origins[G[i][j]][G[ii][jj]] = transl_paths
-    return dr_to_origins
+                    all_shortest_paths[G[i][j]][G[ii][jj]] = transl_paths
+    return all_shortest_paths
 
 
 def get_seq(seq, M):
@@ -196,7 +196,7 @@ if __name__ == "__main__":
     dt = datetime(2024, 12, day)
     exp = {"a": 126384, "b": None}
 
-    # run_and_submit(f"Day{day}/sample.txt", "a", run, expected=exp["a"])
-    # run_and_submit(f"Day{day}/input.txt", "a", run, submit=True, dt=dt)
+    run_and_submit(f"Day{day}/sample.txt", "a", run, expected=exp["a"])
+    run_and_submit(f"Day{day}/input.txt", "a", run, submit=True, dt=dt)
     run_and_submit(f"Day{day}/sample.txt", "b", runp2, expected=exp["b"])
     run_and_submit(f"Day{day}/input.txt", "b", runp2, submit=True, dt=dt)
